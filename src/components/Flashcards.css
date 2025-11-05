@@ -1,0 +1,243 @@
+.flashcards-page {
+  min-height: 100vh;
+  background-image: linear-gradient(to right, #B50D13, #F0A81A, #e9cf10, #2D9CCE);
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 20px;
+}
+
+.flashcards-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.add-flashcard-con {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#add-flashcard {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 25px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+#add-flashcard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card-list-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.question-div {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.answer-div {
+  font-size: 16px;
+  color: #666;
+  margin-top: 15px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+}
+
+.show-hide-btn {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  display: inline-block;
+  margin: 10px 0;
+  transition: color 0.3s ease;
+}
+
+.show-hide-btn:hover {
+  color: #764ba2;
+}
+
+.buttons-con {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.edit, .delete {
+  background: none;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+
+.edit {
+  color: #28a745;
+}
+
+.edit:hover {
+  background: #28a745;
+  color: white;
+}
+
+.delete {
+  color: #dc3545;
+}
+
+.delete:hover {
+  background: #dc3545;
+  color: white;
+}
+
+.question-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.question-container > div {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.question-container h2 {
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.error-con {
+  flex: 1;
+}
+
+.error {
+  color: #dc3545;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.hide {
+  display: none;
+}
+
+#close-btn {
+  font-size: 24px;
+  color: #999;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+#close-btn:hover {
+  color: #333;
+}
+
+label {
+  display: block;
+  margin: 15px 0 5px 0;
+  color: #333;
+  font-weight: 500;
+}
+
+.input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e1e5e9;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  transition: border-color 0.3s ease;
+  resize: vertical;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+#save-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+}
+
+#save-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+@media (max-width: 768px) {
+  .card-list-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .question-container > div {
+    width: 95%;
+    padding: 20px;
+  }
+}

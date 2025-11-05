@@ -1,0 +1,179 @@
+.todo-page {
+  min-height: 100vh;
+  background-image: linear-gradient(to right, #B50D13, #F0A81A, #e9cf10, #2D9CCE);
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 20px;
+}
+
+.todo-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Remove margins and padding from the list */
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Style the list items */
+ul li {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  background: #a3ff53;
+  font-size: 18px;
+  transition: 0.2s;
+  margin-bottom: 2px;
+  border-radius: 4px;
+
+  /* make the list items unselectable */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Set all odd list items to a different color (zebra-stripes) */
+ul li:nth-child(odd) {
+  background: #9ce831;
+}
+
+/* Darker background-color on hover */
+ul li:hover {
+  background: #939393;
+  transform: translateX(5px);
+}
+
+/* When clicked on, add a background color and strike out text */
+ul li.checked {
+  background: #686868;
+  color: #fff;
+  text-decoration: line-through;
+}
+
+/* Add a "checked" mark when clicked on */
+ul li.checked::before {
+  content: '';
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 10px;
+  left: 16px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+}
+
+/* Style the close button */
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+  border-radius: 0 4px 4px 0;
+  transition: all 0.2s ease;
+}
+
+.close:hover {
+  background-color: #d1ff02;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+}
+
+/* Style the header */
+.header {
+  background-color: #ddff03;
+  padding: 30px 40px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  font-size: 30px;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header h2 {
+  margin: 0 0 20px 0;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Clear floats after the header */
+.header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the input */
+input {
+  margin: 0;
+  border: 2px solid #88b241;
+  border-radius: 4px 0 0 4px;
+  width: 75%;
+  padding: 12px;
+  float: left;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: #5a7a2a;
+  box-shadow: 0 0 5px rgba(88, 178, 65, 0.3);
+}
+
+/* Style the "Add" button */
+.addBtn {
+  padding: 12px;
+  width: 25%;
+  background: #88b241;
+  color: white;
+  float: left;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 0 4px 4px 0;
+  border: 2px solid #88b241;
+  font-weight: bold;
+}
+
+.addBtn:hover {
+  background-color: #5a7a2a;
+  border-color: #5a7a2a;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.addBtn:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 20px;
+  }
+  
+  .header h2 {
+    font-size: 24px;
+  }
+  
+  input {
+    width: 70%;
+    font-size: 14px;
+  }
+  
+  .addBtn {
+    width: 30%;
+    font-size: 14px;
+  }
+  
+  ul li {
+    font-size: 16px;
+    padding: 10px 8px 10px 35px;
+  }
+}

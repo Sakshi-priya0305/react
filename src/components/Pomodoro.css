@@ -1,0 +1,109 @@
+.pomodoro-page {
+  min-height: 100vh;
+  background-image: linear-gradient(to right, #B50D13, #F0A81A, #e9cf10, #2D9CCE);
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 20px;
+}
+
+.pomodoro-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 40px 20px;
+}
+
+.timer-container {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.timer-title {
+  font-size: 48px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.timer-display {
+  font-size: 120px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  font-family: 'Courier New', monospace;
+}
+
+.timer-button {
+  padding: 15px 40px;
+  border-radius: 25px;
+  color: white;
+  font-size: 24px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.timer-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(45deg, #FF5252, #26A69A);
+}
+
+/* Image */
+.img-with-text {
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.img-with-text img {
+  max-width: 300px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.img-with-text img:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .img-with-text {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .img-with-text img {
+    height: 250px;
+    width: 300px;
+  }
+  
+  #title {
+    font-size: 50px;
+  }
+  
+  #time {
+    font-size: 120px;
+  }
+  
+  #start {
+    font-size: 30px;
+    padding: 2px 40px;
+  }
+}

@@ -1,0 +1,121 @@
+.quote-page {
+  min-height: 100vh;
+  background-image: linear-gradient(to right, #B50D13, #F0A81A, #e9cf10, #2D9CCE);
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 20px;
+}
+
+.quote-container {
+  min-height: 100vh;
+  transition: 0.5s;
+  transition-timing-function: ease-in;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  border-radius: 15px;
+  width: 600px;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin: 10px;
+  transition: all 0.3s ease;
+}
+
+.container:hover {
+  box-shadow: 0 10px 10px rgb(99, 252, 255);
+  transform: translateY(-5px);
+}
+
+.fa-quote-left, .fa-quote-right {
+  font-size: 35px;
+  color: rgb(99, 252, 255);
+  margin: 0 10px;
+}
+
+.quote {
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  line-height: 1.4;
+  margin: 20px 0;
+}
+
+.author {
+  margin: 10px;
+  text-align: right;
+  font-size: 25px;
+  font-style: italic;
+  font-family: cursive;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+hr {
+  margin: 20px 0;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 9px;
+}
+
+.next {
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 15px 30px;
+  margin-top: 5px;
+  font-weight: bold;
+  color: white;
+  background-image: linear-gradient(to right bottom, rgb(4, 203, 207), #e3d3a7a8);
+  border: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.next:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  background-image: linear-gradient(to right bottom, rgb(0, 183, 187), #d3c397a8);
+}
+
+.next:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    padding: 20px;
+  }
+  
+  .quote {
+    font-size: 28px;
+  }
+  
+  .author {
+    font-size: 20px;
+  }
+  
+  .fa-quote-left, .fa-quote-right {
+    font-size: 25px;
+  }
+}
