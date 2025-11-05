@@ -2,10 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Layout from './components/Layout';
-import { AuthProvider } from './auth/AuthContext';
-import ProtectedRoute from './components/ProtectedRoute';
-import Login from './components/Login';
-import Signup from './components/Signup';
+
 import Home from './components/Home';
 import Pomodoro from './components/Pomodoro';
 import Flashcards from './components/Flashcards';
@@ -20,26 +17,25 @@ import Planner from './components/Planner';
 function App() {
   return (
     <BrowserRouter>
-      <AuthProvider>
-        <Layout>
-          <Routes>
-            {/* Public */}
-            <Route path="/" element={<Home />} />
-            <Route path="/pomodoro" element={<Pomodoro />} />
-            <Route path="/quiz" element={<Quiz />} />
-            <Route path="/calculator" element={<Calculator />} />
-            <Route path="/quotes" element={<QuoteGen />} />
-            <Route path="/facts" element={<FactGen />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
-            {/* Private */}
-            <Route path="/planner" element={<ProtectedRoute><Planner /></ProtectedRoute>} />
-            <Route path="/flashcards" element={<ProtectedRoute><Flashcards /></ProtectedRoute>} />
-            <Route path="/todo" element={<ProtectedRoute><ToDoList /></ProtectedRoute>} />
-            <Route path="/notes" element={<ProtectedRoute><Notes /></ProtectedRoute>} />
-          </Routes>
-        </Layout>
-      </AuthProvider>
+      <Layout>
+        <Routes>
+
+          {/* Public routes */}
+          <Route path="/" element={<Home />} />
+          <Route path="/pomodoro" element={<Pomodoro />} />
+          <Route path="/quiz" element={<Quiz />} />
+          <Route path="/calculator" element={<Calculator />} />
+          <Route path="/quotes" element={<QuoteGen />} />
+          <Route path="/facts" element={<FactGen />} />
+
+          {/* Previously private, now open */}
+          <Route path="/planner" element={<Planner />} />
+          <Route path="/flashcards" element={<Flashcards />} />
+          <Route path="/todo" element={<ToDoList />} />
+          <Route path="/notes" element={<Notes />} />
+
+        </Routes>
+      </Layout>
     </BrowserRouter>
   );
 }

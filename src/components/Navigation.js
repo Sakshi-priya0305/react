@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useAuth } from '../auth/AuthContext';
 
 const Navigation = ({ currentPage, onNavigate }) => {
   const [isSideNavOpen, setIsSideNavOpen] = useState(false);
-  const { user, logout } = useAuth();
 
   const openNav = () => {
     setIsSideNavOpen(true);
@@ -12,11 +10,6 @@ const Navigation = ({ currentPage, onNavigate }) => {
 
   const closeNav = () => {
     setIsSideNavOpen(false);
-  };
-
-  const handleNavigation = (page) => {
-    onNavigate(page);
-    closeNav();
   };
 
   return (
@@ -46,17 +39,6 @@ const Navigation = ({ currentPage, onNavigate }) => {
                 </div>
               </div>
             </li>
-            {user ? (
-              <>
-                <li><span style={{ color: '#fff', fontSize: 16 }}>Hi, {user.email}</span></li>
-                <button type="button" onClick={logout}>Logout</button>
-              </>
-            ) : (
-              <>
-                <li><Link to="/login">Login</Link></li>
-                <li><Link to="/signup">Sign Up</Link></li>
-              </>
-            )}
           </ul>
         </div>
       </nav>
@@ -74,10 +56,10 @@ const Navigation = ({ currentPage, onNavigate }) => {
         <Link to="/notes" onClick={closeNav}>Notes</Link>
         <Link to="/quotes" onClick={closeNav}>Quotes</Link>
         <Link to="/facts" onClick={closeNav}>Facts</Link>
-        <a><button type="button">Login</button></a>
       </div>
     </>
   );
 };
 
 export default Navigation;
+
