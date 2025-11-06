@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useAuth } from '../auth/AuthContext';
 
 const Navigation = ({ currentPage, onNavigate }) => {
+  const { user, signOut } = useAuth();
   const [isSideNavOpen, setIsSideNavOpen] = useState(false);
 
   const openNav = () => {
@@ -39,6 +41,19 @@ const Navigation = ({ currentPage, onNavigate }) => {
                 </div>
               </div>
             </li>
+            {user ? (
+              <>
+                <li style={{ marginLeft: '1rem' }}>Hi, {user.displayName || user.email}</li>
+                <li>
+                  <a onClick={() => signOut()}>Logout</a>
+                </li>
+              </>
+            ) : (
+              <>
+                <li><Link to="/login">Login</Link></li>
+                <li><Link to="/signup">Sign Up</Link></li>
+              </>
+            )}
           </ul>
         </div>
       </nav>
@@ -56,6 +71,14 @@ const Navigation = ({ currentPage, onNavigate }) => {
         <Link to="/notes" onClick={closeNav}>Notes</Link>
         <Link to="/quotes" onClick={closeNav}>Quotes</Link>
         <Link to="/facts" onClick={closeNav}>Facts</Link>
+        {user ? (
+          <a onClick={() => { signOut(); closeNav(); }}>Logout</a>
+        ) : (
+          <>
+            <Link to="/login" onClick={closeNav}>Login</Link>
+            <Link to="/signup" onClick={closeNav}>Sign Up</Link>
+          </>
+        )}
       </div>
     </>
   );

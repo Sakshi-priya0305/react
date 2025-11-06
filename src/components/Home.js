@@ -14,39 +14,40 @@ const Home = () => {
     return () => clearInterval(timer1);
   }, []);
 
+  const publicBase = process.env.PUBLIC_URL || '';
   const quotes = [
-    { src: "/Photos/Quotes/1.png" },
-    { src: "/Photos/Quotes/2.png" },
-    { src: "/Photos/Quotes/3.png" },
-    { src: "/Photos/Quotes/4.png" },
-    { src: "/Photos/Quotes/5.png" },
-    { src: "/Photos/Quotes/6.png" },
-    { src: "/Photos/Quotes/7.png" },
-    { src: "/Photos/Quotes/8.png" },
-    { src: "/Photos/Quotes/9.png" },
-    { src: "/Photos/Quotes/10.png" }
+    { src: `${publicBase}/Photos/Quotes/1.png` },
+    { src: `${publicBase}/Photos/Quotes/2.png` },
+    { src: `${publicBase}/Photos/Quotes/3.png` },
+    { src: `${publicBase}/Photos/Quotes/4.png` },
+    { src: `${publicBase}/Photos/Quotes/5.png` },
+    { src: `${publicBase}/Photos/Quotes/6.png` },
+    { src: `${publicBase}/Photos/Quotes/7.png` },
+    { src: `${publicBase}/Photos/Quotes/8.png` },
+    { src: `${publicBase}/Photos/Quotes/9.png` },
+    { src: `${publicBase}/Photos/Quotes/10.png` }
   ];
 
   const facts = [
-    { src: "/Photos/Facts/1.png" },
-    { src: "/Photos/Facts/2.png" },
-    { src: "/Photos/Facts/3.png" },
-    { src: "/Photos/Facts/4.png" },
-    { src: "/Photos/Facts/5.png" },
-    { src: "/Photos/Facts/6.png" },
-    { src: "/Photos/Facts/7.png" }
+    { src: `${publicBase}/Photos/Facts/1.png` },
+    { src: `${publicBase}/Photos/Facts/2.png` },
+    { src: `${publicBase}/Photos/Facts/3.png` },
+    { src: `${publicBase}/Photos/Facts/4.png` },
+    { src: `${publicBase}/Photos/Facts/5.png` },
+    { src: `${publicBase}/Photos/Facts/6.png` },
+    { src: `${publicBase}/Photos/Facts/7.png` }
   ];
 
   const features = [
-    { src: "/Photos/Planner.png", title: "Daily Planner" },
-    { src: "/Photos/Pomodoro.png", title: "Pomodoro Timer" },
-    { src: "/Photos/Quiz.png", title: "Quizzes" },
-    { src: "/Photos/Flashcard.png", title: "Flashcards" },
-    { src: "/Photos/ToDoList.png", title: "To-Do List" },
-    { src: "/Photos/Notes.png", title: "Make your own Notes" },
-    { src: "/Photos/Calculator.png", title: "Calculator" },
-    { src: "/Photos/Quote.png", title: "Motivational Quotes" },
-    { src: "/Photos/Fact.png", title: "Fun Facts" }
+    { src: `${publicBase}/Photos/Planner.png`, title: "Daily Planner" },
+    { src: `${publicBase}/Photos/Pomodoro.png`, title: "Pomodoro Timer" },
+    { src: `${publicBase}/Photos/Quiz.png`, title: "Quizzes" },
+    { src: `${publicBase}/Photos/Flashcard.png`, title: "Flashcards" },
+    { src: `${publicBase}/Photos/ToDoList.png`, title: "To-Do List" },
+    { src: `${publicBase}/Photos/Notes.png`, title: "Make your own Notes" },
+    { src: `${publicBase}/Photos/Calculator.png`, title: "Calculator" },
+    { src: `${publicBase}/Photos/Quote.png`, title: "Motivational Quotes" },
+    { src: `${publicBase}/Photos/Fact.png`, title: "Fun Facts" }
   ];
 
   return (
@@ -79,7 +80,7 @@ const Home = () => {
       {/* Planner */}
       <div className="containerRight">
         <div className="photo">
-          <img src="https://i.pinimg.com/564x/30/5a/58/305a5895939824c32d7ef171fa29c684.jpg" alt="Image" />
+          <img src={`${publicBase}/Photos/Planner.png`} alt="Planner" />
         </div>
         <div className="text">
           <h2 id="planner">Plan your day ahead</h2>
@@ -96,14 +97,14 @@ const Home = () => {
           <button type="button" onClick={() => navigate('/pomodoro')}>Try It</button>
         </div>
         <div className="photo">
-          <img src="https://i.pinimg.com/564x/37/de/29/37de29028700923ca1e9b1125666787f.jpg" alt="Image" />
+          <img src={`${publicBase}/Photos/Pomodoro.png`} alt="Pomodoro" />
         </div>
       </div>
 
       {/* Quiz */}
       <div className="containerRight">
         <div className="photo">
-          <img src="https://i.pinimg.com/564x/71/7b/8b/717b8b3ff4bedabd6b27fdfc09b8e601.jpg" alt="Image" />
+          <img src={`${publicBase}/Photos/Quiz.png`} alt="Quiz" />
         </div>
         <div className="text">
           <h2 id="quiz">Take some quizzes</h2>
@@ -120,14 +121,14 @@ const Home = () => {
           <button type="button" onClick={() => navigate('/flashcards')}>Try It</button>
         </div>
         <div className="photo">
-          <img src="https://i.pinimg.com/564x/a8/33/a3/a833a3c8b6fb57a6d15a592e27b8824a.jpg" alt="Image" />
+          <img src={`${publicBase}/Photos/Flashcard.png`} alt="Flashcards" />
         </div>
       </div>
 
       {/* To-Do List */}
       <div className="containerRight">
         <div className="photo">
-          <img src="https://i.pinimg.com/564x/cf/0a/f4/cf0af4177bab921043bf6c523653e187.jpg" alt="Image" />
+          <img src={`${publicBase}/Photos/ToDoList.png`} alt="To-Do" />
         </div>
         <div className="text">
           <h2 id="todo">Complete your to-do list</h2>
@@ -144,14 +145,14 @@ const Home = () => {
           <button type="button" onClick={() => navigate('/notes')}>Try It</button>
         </div>
         <div className="photo">
-          <img src="https://i.pinimg.com/564x/55/3b/1c/553b1cb0d490bc5ba93dab595100db16.jpg" alt="Image" />
+          <img src={`${publicBase}/Photos/Notes.png`} alt="Notes" />
         </div>
       </div>
 
       {/* Calculator */}
       <div className="containerRight">
         <div className="photo">
-          <img src="https://i.pinimg.com/564x/59/32/c3/5932c33f3d3a6e97bab67f7378b12678.jpg" alt="Image" />
+          <img src={`${publicBase}/Photos/Calculator.png`} alt="Calculator" />
         </div>
         <div className="text">
           <h2 id="calculator">Calculator</h2>
@@ -168,7 +169,7 @@ const Home = () => {
           <button type="button" onClick={() => navigate('/quotes')}>Try It</button>
         </div>
         <div className="photo">
-          <img src="https://i.pinimg.com/564x/47/42/39/47423973d0fe07dee82a8cb75681a889.jpg" alt="Image" />
+          <img src={`${publicBase}/Photos/Quote.png`} alt="Quotes" />
         </div>
       </div>
 
@@ -184,7 +185,7 @@ const Home = () => {
       {/* Facts */}
       <div className="containerRight">
         <div className="photo">
-          <img src="https://i.pinimg.com/564x/62/7c/66/627c66943c8da7fe1d5b3a571f7a7386.jpg" alt="Image" />
+          <img src={`${publicBase}/Photos/Fact.png`} alt="Facts" />
         </div>
         <div className="text">
           <h2 id="facts">Increase Your Knowledge</h2>

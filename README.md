@@ -20,10 +20,16 @@ Auth flow:
 
 Setup Firebase:
 1. Create a Firebase project and a Web app, enable Email/Password provider
-   - Also enable Google provider (Authentication → Sign-in method → Google → Enable)
-2. Copy Firebase config into environment variables or directly into `src/auth/firebase.js`
-3. Install deps: `npm install firebase`
-4. Start app: `npm start`
+2. Add a `.env` file in project root with:
+   - `REACT_APP_FIREBASE_API_KEY=...`
+   - `REACT_APP_FIREBASE_AUTH_DOMAIN=...`
+   - `REACT_APP_FIREBASE_PROJECT_ID=...`
+   - `REACT_APP_FIREBASE_STORAGE_BUCKET=...`
+   - `REACT_APP_FIREBASE_MESSAGING_SENDER_ID=...`
+   - `REACT_APP_FIREBASE_APP_ID=...`
+3. Or put values directly in `src/firebase.js` (for local/dev only)
+4. Install deps: `npm install`
+5. Start app: `npm start`
 
 
 ### 🍅 Pomodoro Timer
